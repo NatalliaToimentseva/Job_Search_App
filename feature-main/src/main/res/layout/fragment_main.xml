@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/dark_gray"
+    tools:context=".MainFragment">
+
+    <androidx.appcompat.widget.SearchView
+        android:id="@+id/search_bar"
+        android:layout_width="@dimen/dm_0"
+        android:layout_height="@dimen/dm_40"
+        android:layout_margin="@dimen/dm_10"
+        android:background="@drawable/lite_rounded_background"
+        android:padding="@dimen/dm_10"
+        android:theme="@style/SearchView"
+        app:layout_constraintEnd_toStartOf="@+id/filter_button"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:queryHint="@string/search_hint"
+        app:searchIcon="@drawable/ic_search" />
+
+    <ImageButton
+        android:id="@+id/filter_button"
+        style="@style/FilterButtonStyle"
+        android:contentDescription="@string/filter_button"
+        android:src="@drawable/ic_filter"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/offers_recycle_view"
+        style="@style/OffersRecycleViewStyle"
+        app:layout_constraintStart_toStartOf="@+id/search_bar"
+        app:layout_constraintTop_toBottomOf="@+id/search_bar" />
+
+    <TextView
+        android:id="@+id/vacancy_block_title"
+        style="@style/VacancyBlockTitleStyle"
+        android:text="@string/vacancy_block_title"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/offers_recycle_view" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/vacancy_recycle_view"
+        style="@style/VacancyRecycleViewStyle"
+        app:layout_constraintBottom_toTopOf="@+id/main_button"
+        app:layout_constraintStart_toStartOf="@+id/vacancy_block_title"
+        app:layout_constraintTop_toBottomOf="@+id/vacancy_block_title" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/main_button"
+        style="@style/MainScreenButtonStyle"
+        android:layout_marginVertical="@dimen/dm_10"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/vacancy_recycle_view"
+        tools:text="Еще 143 вакансии" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="@style/ProgressBarStyle"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

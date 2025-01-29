@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/vacancy_card_view"
+    style="@style/VacancyCardStyle"
+    app:cardCornerRadius="@dimen/dm_8"
+    app:cardElevation="@dimen/dm_0">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingVertical="@dimen/dm_20">
+
+        <TextView
+            android:id="@+id/looking_number"
+            style="@style/VacancyLookingNumberTextStyle"
+            android:visibility="visible"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Сейчас просматривает 1 человек" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/is_favorite_image"
+            style="@style/VacancyImageStyle"
+            android:layout_marginHorizontal="@dimen/dm_20"
+            android:src="@drawable/ic_favorite"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/vacancy_title"
+            style="@style/VacancyTitleTextStyle"
+            android:layout_marginVertical="@dimen/dm_10"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/looking_number"
+            tools:text="UI/UX Designer" />
+
+        <TextView
+            android:id="@+id/vacancy_city"
+            style="@style/VacancyBodyTextStyle"
+            android:layout_marginVertical="@dimen/dm_5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/vacancy_title"
+            tools:text="Минск" />
+
+        <TextView
+            android:id="@+id/vacancy_company"
+            style="@style/VacancyBodyTextStyle"
+            android:layout_marginVertical="@dimen/dm_5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/vacancy_city"
+            tools:text="Мобирикс" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/is_checked_image"
+            style="@style/VacancyImageStyle"
+            android:layout_marginStart="@dimen/dm_10"
+            android:src="@drawable/ic_clock"
+            app:layout_constraintBottom_toBottomOf="@+id/vacancy_company"
+            app:layout_constraintStart_toEndOf="@+id/vacancy_company"
+            app:layout_constraintTop_toTopOf="@+id/vacancy_company" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ic_bag"
+            style="@style/VacancyImageStyle"
+            android:layout_marginVertical="@dimen/dm_5"
+            android:layout_marginStart="@dimen/dm_20"
+            android:src="@drawable/ic_bag"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/vacancy_company" />
+
+        <TextView
+            android:id="@+id/vacancy_experience"
+            style="@style/VacancyBodyTextStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dm_10"
+            app:layout_constraintBottom_toBottomOf="@+id/ic_bag"
+            app:layout_constraintStart_toEndOf="@+id/ic_bag"
+            app:layout_constraintTop_toTopOf="@+id/ic_bag"
+            tools:text="Опыт от 1 года до 3 лет" />
+
+        <TextView
+            android:id="@+id/vacancy_published_date"
+            style="@style/VacancyPublishedDateTextStyle"
+            android:layout_marginVertical="@dimen/dm_5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ic_bag"
+            tools:text="Опубликовано 16 февраля" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            style="@style/ButtonStyle"
+            android:layout_marginVertical="@dimen/dm_10"
+            android:text="@string/button_vacancy_title"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/vacancy_published_date" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>

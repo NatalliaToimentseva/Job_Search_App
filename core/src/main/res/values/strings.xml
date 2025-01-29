@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Job Search App</string>
+    <string name="main_nav_bar">Поиск</string>
+    <string name="favorite_nav_bar">Избранное</string>
+    <string name="responses_nav_bar">Отклики</string>
+    <string name="chat_nav_bar">Сообщения</string>
+    <string name="profile_nav_bar">Профиль</string>
+    <string name="search_hint">Должность, ключевые слова</string>
+    <string name="filter_button">filter</string>
+    <string name="vacancy_block_title">Вакансии для вас</string>
+    <string name="button_vacancy_title">Откликнуться</string>
+</resources>

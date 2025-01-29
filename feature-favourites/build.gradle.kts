@@ -5,7 +5,7 @@ plugins {
 
 android {
     namespace = "com.effectivemobile.feature_favourites"
-    compileSdk = 34
+    compileSdk = 35
 
     defaultConfig {
         minSdk = 28
@@ -39,11 +39,16 @@ dependencies {
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
-    implementation(libs.material)
+    implementation (libs.material)
+    implementation(libs.androidx.constraintlayout)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
 
-    implementation(project(":app"))
+    implementation(libs.koin.core)
+    implementation(libs.koin.android)
+
+
     implementation(project(":domain"))
+    implementation(project(":core"))
 }

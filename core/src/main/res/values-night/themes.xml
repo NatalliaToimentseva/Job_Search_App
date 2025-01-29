@@ -4,4 +4,9 @@
         <!-- Customize your dark theme here. -->
         <!-- <item name="colorPrimary">@color/my_dark_primary</item> -->
     </style>
+    <style name="SearchView" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="android:editTextColor">@color/white</item>
+        <item name="android:textColorHint">@color/white</item>
+        <item name="searchIcon">@color/white</item>
+    </style>
 </resources>

@@ -6,13 +6,14 @@ plugins {
 
 android {
     namespace = "com.effectivemobile.data"
-    compileSdk = 34
+    compileSdk = 35
 
     defaultConfig {
         minSdk = 28
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles("consumer-rules.pro")
+        buildConfigField("String", "BASE_URL", "\"https://drive.usercontent.google.com/\"")
     }
 
     buildTypes {
@@ -37,10 +38,9 @@ dependencies {
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
-    implementation(libs.material)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
-    androidTestImplementation(libs.androidx.espresso.core)
+
 
     implementation(libs.room.runtime)
     ksp(libs.room.compiler)
@@ -51,6 +51,8 @@ dependencies {
     implementation(libs.okhttp)
     implementation(libs.logging.interceptor)
 
-    implementation(project(":app"))
+    implementation(libs.koin.core)
+    implementation(libs.koin.android)
+
     implementation(project(":domain"))
 }

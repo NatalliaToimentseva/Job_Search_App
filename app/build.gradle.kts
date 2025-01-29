@@ -5,7 +5,7 @@ plugins {
 
 android {
     namespace = "com.effectivemobile.myapplication"
-    compileSdk = 34
+    compileSdk = 35
 
     defaultConfig {
         applicationId = "com.effectivemobile.myapplication"
@@ -42,7 +42,7 @@ dependencies {
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
-    implementation(libs.material)
+    implementation (libs.material)
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
     testImplementation(libs.junit)
@@ -51,4 +51,13 @@ dependencies {
 
     implementation(libs.koin.core)
     implementation(libs.koin.android)
+
+    implementation(libs.androidx.navigation.fragment.ktx)
+    implementation(libs.androidx.navigation.ui.ktx)
+
+    implementation(project(":domain"))
+    implementation(project(":data"))
+    implementation(project(":feature-main"))
+    implementation(project(":feature-favourites"))
+    implementation(project(":core"))
 }
