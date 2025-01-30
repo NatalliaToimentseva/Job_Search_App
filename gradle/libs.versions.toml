@@ -1,4 +1,5 @@
 [versions]
+adapterdelegates4KotlinDsl = "4.3.2"
 agp = "8.7.2"
 kotlin = "1.9.24"
 coreKtx = "1.15.0"
@@ -20,6 +21,8 @@ navigationUiKtx = "2.8.5"
 lifecycleViewmodelAndroid = "2.8.5"
 
 [libraries]
+adapterdelegates4-kotlin-dsl = { module = "com.hannesdorfmann:adapterdelegates4-kotlin-dsl", version.ref = "adapterdelegates4KotlinDsl" }
+adapterdelegates4-kotlin-dsl-viewbinding = { module = "com.hannesdorfmann:adapterdelegates4-kotlin-dsl-viewbinding", version.ref = "adapterdelegates4KotlinDsl" }
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }

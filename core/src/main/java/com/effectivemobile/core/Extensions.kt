@@ -10,11 +10,9 @@ fun Context.toast(message: String) {
 }
 
 fun Context.openLink(link: String) {
-    Intent(Intent.ACTION_VIEW).apply {
+    val intent = Intent(Intent.ACTION_VIEW).apply {
         data = Uri.parse(link)
         flags = Intent.FLAG_ACTIVITY_NEW_TASK
-        if (resolveActivity(packageManager) != null) {
-            startActivity(this)
-        }
     }
+    this.startActivity(intent)
 }

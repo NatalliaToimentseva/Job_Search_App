@@ -3,6 +3,8 @@
     <style name="Base.Theme.JobSearchApp" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your dark theme here. -->
         <!-- <item name="colorPrimary">@color/my_dark_primary</item> -->
+        <item name="android:windowBackground">@color/dark_gray</item>
+        <item name="android:statusBarColor">@color/dark_gray</item>
     </style>
     <style name="SearchView" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <item name="android:editTextColor">@color/white</item>

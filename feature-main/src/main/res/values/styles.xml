@@ -69,7 +69,7 @@
     <style name="VacancyCardStyle">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:layout_marginVertical">@dimen/dm_5</item>
+        <item name="android:layout_marginVertical">@dimen/dm_15</item>
         <item name="android:backgroundTint">@color/medium_gray</item>
     </style>
 
@@ -89,6 +89,7 @@
     <style name="MainScreenButtonStyle" parent="ButtonStyle">
         <item name="android:layout_width">@dimen/dm_320</item>
         <item name="android:layout_height">@dimen/dm_48</item>
+        <item name="android:layout_gravity">center</item>
         <item name="android:textFontWeight">600</item>
         <item name="android:textSize">@dimen/sp_16</item>
         <item name="android:background">@drawable/button_background_rectangular</item>
@@ -97,7 +98,8 @@
     <style name="FilterButtonStyle">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:layout_margin">@dimen/dm_10</item>
+        <item name="android:layout_marginVertical">@dimen/dm_10</item>
+        <item name="android:layout_marginStart">@dimen/dm_10</item>
         <item name="android:background">@drawable/lite_rounded_background</item>
         <item name="android:padding">@dimen/dm_10</item>
     </style>
@@ -106,6 +108,7 @@
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_marginTop">@dimen/dm_20</item>
+        <item name="android:layout_marginBottom">@dimen/dm_5</item>
         <item name="android:layout_marginStart">@dimen/dm_10</item>
         <item name="android:textColor">@color/white</item>
         <item name="android:textFontWeight">600</item>
