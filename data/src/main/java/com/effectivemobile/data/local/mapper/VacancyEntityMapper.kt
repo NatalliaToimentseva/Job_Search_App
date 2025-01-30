@@ -1,51 +1,16 @@
-package com.effectivemobile.data.remote.mapper
+package com.effectivemobile.data.local.mapper
 
 import com.effectivemobile.data.local.entity.AddressEntity
 import com.effectivemobile.data.local.entity.ExperienceEntity
 import com.effectivemobile.data.local.entity.SalaryEntity
 import com.effectivemobile.data.local.entity.VacancyEntity
-import com.effectivemobile.data.remote.response.AddressResponse
-import com.effectivemobile.data.remote.response.ButtonResponse
-import com.effectivemobile.data.remote.response.ExperienceResponse
-import com.effectivemobile.data.remote.response.JobResponse
-import com.effectivemobile.data.remote.response.OfferResponse
-import com.effectivemobile.data.remote.response.SalaryResponse
-import com.effectivemobile.data.remote.response.VacancyResponse
 import com.effectivemobile.domain.models.AddressModel
-import com.effectivemobile.domain.models.ButtonModel
 import com.effectivemobile.domain.models.ExperienceModel
-import com.effectivemobile.domain.models.JobModel
-import com.effectivemobile.domain.models.OfferModel
 import com.effectivemobile.domain.models.SalaryModel
 import com.effectivemobile.domain.models.VacancyModel
 
-fun JobResponse.toJob(): JobModel {
-    return JobModel(
-        offers = offers.toListOffers(),
-        vacancies = vacancies.toListVacancy()
-    )
-}
-
-fun OfferResponse.toOffer(): OfferModel {
-    return OfferModel(
-        id = id,
-        title = title,
-        link = link,
-        button = button?.toButton()
-    )
-}
-
-fun List<OfferResponse>.toListOffers(): List<OfferModel> {
-    return this.map { it.toOffer() }
-}
-
-fun ButtonResponse.toButton(): ButtonModel {
-    return ButtonModel(
-        text = text
-    )
-}
-
-fun VacancyResponse.toVacancy(): VacancyModel {
+fun VacancyEntity.toVacancy(
+): VacancyModel {
     return VacancyModel(
         id = id,
         lookingNumber = lookingNumber,
@@ -64,11 +29,11 @@ fun VacancyResponse.toVacancy(): VacancyModel {
     )
 }
 
-fun List<VacancyResponse>.toListVacancy(): List<VacancyModel> {
+fun List<VacancyEntity>.toListVacancy(): List<VacancyModel> {
     return this.map { it.toVacancy() }
 }
 
-fun AddressResponse.toAddress(): AddressModel {
+fun AddressEntity.toAddress(): AddressModel {
     return AddressModel(
         town = town,
         street = street,
@@ -76,21 +41,21 @@ fun AddressResponse.toAddress(): AddressModel {
     )
 }
 
-fun ExperienceResponse.toExperience(): ExperienceModel {
+fun ExperienceEntity.toExperience(): ExperienceModel {
     return ExperienceModel(
         previewText = previewText,
         text = text
     )
 }
 
-fun SalaryResponse.toSalary(): SalaryModel {
+fun SalaryEntity.toSalary(): SalaryModel {
     return SalaryModel(
         full = full,
         short = short
     )
 }
 
-fun VacancyResponse.toVacancyEntity(): VacancyEntity {
+fun VacancyModel.toVacancyEntity(): VacancyEntity {
     return VacancyEntity(
         id = id,
         lookingNumber = lookingNumber,
@@ -109,11 +74,11 @@ fun VacancyResponse.toVacancyEntity(): VacancyEntity {
     )
 }
 
-fun List<VacancyResponse>.toListVacancyEntity(): List<VacancyEntity> {
+fun List<VacancyModel>.toListVacancyEntity(): List<VacancyEntity> {
     return this.map { it.toVacancyEntity() }
 }
 
-fun AddressResponse.toAddressEntity(): AddressEntity {
+fun AddressModel.toAddressEntity(): AddressEntity {
     return AddressEntity(
         town = town,
         street = street,
@@ -121,14 +86,14 @@ fun AddressResponse.toAddressEntity(): AddressEntity {
     )
 }
 
-fun ExperienceResponse.toExperienceEntity(): ExperienceEntity {
+fun ExperienceModel.toExperienceEntity(): ExperienceEntity {
     return ExperienceEntity(
         previewText = previewText,
         text = text
     )
 }
 
-fun SalaryResponse.toSalaryEntity(): SalaryEntity {
+fun SalaryModel.toSalaryEntity(): SalaryEntity {
     return SalaryEntity(
         full = full,
         short = short

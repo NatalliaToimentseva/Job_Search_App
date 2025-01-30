@@ -11,7 +11,6 @@ import com.effectivemobile.core.toast
 import com.effectivemobile.feature_main.databinding.FragmentMainBinding
 import com.effectivemobile.feature_main.generalAdapter.MainAdapter
 import com.effectivemobile.feature_main.models.MainScreenViews
-import com.effectivemobile.feature_main.utils.convertToMainScreenViews
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class MainFragment : Fragment() {
@@ -40,8 +39,8 @@ class MainFragment : Fragment() {
                 } else progressBar.visibility = View.GONE
             }
         }
-        viewModel.jobState.observe(viewLifecycleOwner) { jobSate ->
-            initAdapter(convertToMainScreenViews(jobSate))
+        viewModel.mainScreenElements.observe(viewLifecycleOwner) { screenElements ->
+            initAdapter(screenElements)
         }
     }
 
@@ -57,8 +56,10 @@ class MainFragment : Fragment() {
                 },
                 onFavoriteClickVacancy = { isFavorite ->
                     TODO()
+                },
+                showAllVacancies = { isShow ->
+                    viewModel.setIsShowAllVacancies(isShow)
                 }
-
             ).also {
                 generalRecycleView.adapter = it
             }

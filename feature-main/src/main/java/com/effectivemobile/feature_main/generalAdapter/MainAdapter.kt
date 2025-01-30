@@ -1,6 +1,7 @@
 package com.effectivemobile.feature_main.generalAdapter
 
 import androidx.recyclerview.widget.DiffUtil
+import com.effectivemobile.feature_main.adapterDelegate.AllVacanciesTopSectionAdapterDelegate
 import com.effectivemobile.feature_main.adapterDelegate.ButtonAdapterDelegate
 import com.effectivemobile.feature_main.adapterDelegate.OffersAdapterDelegate
 import com.effectivemobile.feature_main.adapterDelegate.SearchSectionAdapterDelegate
@@ -10,9 +11,10 @@ import com.effectivemobile.feature_main.models.MainScreenViews
 import com.hannesdorfmann.adapterdelegates4.AsyncListDifferDelegationAdapter
 
 class MainAdapter(
-    private val onClickOffers: (link: String) -> Unit,
-    private val onFavoriteClickVacancy: (isFavorite: Boolean) -> Unit,
-    private val onClickVacancy: (id: String) -> Unit
+    onClickOffers: (link: String) -> Unit,
+    onFavoriteClickVacancy: (isFavorite: Boolean) -> Unit,
+    onClickVacancy: (id: String) -> Unit,
+    showAllVacancies: (isShow: Boolean) -> Unit
 
 ) : AsyncListDifferDelegationAdapter<MainScreenViews>(object :
     DiffUtil.ItemCallback<MainScreenViews>() {
@@ -27,6 +29,7 @@ class MainAdapter(
 }) {
 
     init {
+        delegatesManager.addDelegate(AllVacanciesTopSectionAdapterDelegate(showAllVacancies = showAllVacancies))
         delegatesManager.addDelegate(SearchSectionAdapterDelegate())
         delegatesManager.addDelegate(OffersAdapterDelegate(onClick = onClickOffers))
         delegatesManager.addDelegate(TitleAdapterDelegate())
@@ -36,6 +39,6 @@ class MainAdapter(
                 onClick = onClickVacancy
             )
         )
-        delegatesManager.addDelegate(ButtonAdapterDelegate())
+        delegatesManager.addDelegate(ButtonAdapterDelegate(showAllVacancies = showAllVacancies))
     }
 }

@@ -5,9 +5,16 @@ import com.effectivemobile.domain.models.VacancyModel
 
 sealed class MainScreenViews : DiffEquals<MainScreenViews> {
 
+    data class AllVacanciesTopSection(val vacancyNumber: Int) : MainScreenViews() {
+
+        override fun isSameItem(other: MainScreenViews): Boolean = other is AllVacanciesTopSection
+
+        override fun isSameContent(other: MainScreenViews): Boolean = true
+    }
+
     data object SearchSection : MainScreenViews() {
 
-        override fun isSameItem(other: MainScreenViews): Boolean = true
+        override fun isSameItem(other: MainScreenViews): Boolean = other is SearchSection
 
         override fun isSameContent(other: MainScreenViews): Boolean = true
     }
@@ -22,7 +29,7 @@ sealed class MainScreenViews : DiffEquals<MainScreenViews> {
 
     data object TitleSection : MainScreenViews() {
 
-        override fun isSameItem(other: MainScreenViews): Boolean = true
+        override fun isSameItem(other: MainScreenViews): Boolean = other is TitleSection
 
         override fun isSameContent(other: MainScreenViews): Boolean = true
     }
@@ -37,7 +44,7 @@ sealed class MainScreenViews : DiffEquals<MainScreenViews> {
 
     data class ButtonSection(val vacancyNumber: Int) : MainScreenViews() {
 
-        override fun isSameItem(other: MainScreenViews): Boolean = true
+        override fun isSameItem(other: MainScreenViews): Boolean = other is ButtonSection
 
         override fun isSameContent(other: MainScreenViews): Boolean = true
     }

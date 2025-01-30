@@ -30,7 +30,7 @@ data class VacancyModel(
     val appliedNumber: Long?,
     val description: String?,
     val responsibilities: String,
-    val questions: List<String>,
+    val questions: List<String>
 )
 
 data class AddressModel(
