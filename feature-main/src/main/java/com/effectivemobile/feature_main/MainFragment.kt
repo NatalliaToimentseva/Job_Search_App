@@ -6,12 +6,13 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.effectivemobile.core.models.GeneralScreenViews
 import com.effectivemobile.core.navigator.navigate
 import com.effectivemobile.core.utils.openLink
 import com.effectivemobile.core.utils.toast
+import com.effectivemobile.core.utils.updater
 import com.effectivemobile.feature_main.databinding.FragmentMainBinding
 import com.effectivemobile.feature_main.mainAdapter.MainAdapter
-import com.effectivemobile.core.models.GeneralScreenViews
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class MainFragment : Fragment() {
@@ -39,6 +40,9 @@ class MainFragment : Fragment() {
                     progressBar.visibility = View.VISIBLE
                 } else progressBar.visibility = View.GONE
             }
+        }
+        viewModel.vacanciesList.observe(viewLifecycleOwner) { vacancies ->
+            this.updater().updateBadge(vacancies.filter { it.isFavorite }.size)
         }
         viewModel.mainScreenElements.observe(viewLifecycleOwner) { screenElements ->
             if (screenElements.isNotEmpty()) {

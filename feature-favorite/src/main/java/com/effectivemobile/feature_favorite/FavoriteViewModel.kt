@@ -22,6 +22,7 @@ class FavoriteViewModel(
     var error: ((message: String) -> Unit)? = null
 
     private val _vacanciesList = MutableLiveData<List<VacancyModel>>()
+    val vacanciesList : LiveData<List<VacancyModel>> get() = _vacanciesList
 
     private val _screenViews = MutableLiveData<List<GeneralScreenViews>>(arrayListOf())
     val screenViews: LiveData<List<GeneralScreenViews>> get() = _screenViews

@@ -5,6 +5,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.effectivemobile.core.models.GeneralScreenViews
 import com.effectivemobile.domain.models.OfferModel
 import com.effectivemobile.domain.models.VacancyModel
 import com.effectivemobile.domain.results.JobResult
@@ -12,7 +13,6 @@ import com.effectivemobile.domain.results.VacancyResult
 import com.effectivemobile.domain.useCases.GetVacanciesFromDbUseCase
 import com.effectivemobile.domain.useCases.LoadJobDataUseCase
 import com.effectivemobile.domain.useCases.SetFavoriteUseCase
-import com.effectivemobile.core.models.GeneralScreenViews
 import com.effectivemobile.feature_main.utils.convertToMainScreenViews
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -33,6 +33,7 @@ class MainViewModel(
 
     private val _offers = MutableLiveData<List<OfferModel>>()
     private val _vacanciesList = MutableLiveData<List<VacancyModel>>()
+    val vacanciesList: LiveData<List<VacancyModel>> get() = _vacanciesList
 
     init {
         viewModelScope.launch(Dispatchers.IO) {
