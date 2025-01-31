@@ -21,4 +21,5 @@ class DataBaseRepositoryImpl(
 
     override suspend fun updateVacancy(vacancy: VacancyModel) =
         dao.updateVacancy(vacancy.toVacancyEntity())
+
 }

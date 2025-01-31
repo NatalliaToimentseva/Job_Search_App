@@ -1,6 +1,7 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
+    id("androidx.navigation.safeargs")
 }
 
 android {
@@ -58,6 +59,6 @@ dependencies {
     implementation(project(":domain"))
     implementation(project(":data"))
     implementation(project(":feature-main"))
-    implementation(project(":feature-favourites"))
+    implementation(project(":feature-favorites"))
     implementation(project(":core"))
 }

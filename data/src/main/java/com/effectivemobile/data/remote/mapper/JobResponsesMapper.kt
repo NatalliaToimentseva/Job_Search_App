@@ -70,6 +70,7 @@ fun List<VacancyResponse>.toListVacancy(): List<VacancyModel> {
 
 fun AddressResponse.toAddress(): AddressModel {
     return AddressModel(
+        id = null,
         town = town,
         street = street,
         house = house
@@ -78,6 +79,7 @@ fun AddressResponse.toAddress(): AddressModel {
 
 fun ExperienceResponse.toExperience(): ExperienceModel {
     return ExperienceModel(
+        id = null,
         previewText = previewText,
         text = text
     )
@@ -85,6 +87,7 @@ fun ExperienceResponse.toExperience(): ExperienceModel {
 
 fun SalaryResponse.toSalary(): SalaryModel {
     return SalaryModel(
+        id = null,
         full = full,
         short = short
     )
@@ -115,6 +118,7 @@ fun List<VacancyResponse>.toListVacancyEntity(): List<VacancyEntity> {
 
 fun AddressResponse.toAddressEntity(): AddressEntity {
     return AddressEntity(
+        id = 0,
         town = town,
         street = street,
         house = house
@@ -123,6 +127,7 @@ fun AddressResponse.toAddressEntity(): AddressEntity {
 
 fun ExperienceResponse.toExperienceEntity(): ExperienceEntity {
     return ExperienceEntity(
+        id = 0,
         previewText = previewText,
         text = text
     )
@@ -130,6 +135,7 @@ fun ExperienceResponse.toExperienceEntity(): ExperienceEntity {
 
 fun SalaryResponse.toSalaryEntity(): SalaryEntity {
     return SalaryEntity(
+        id = 0,
         full = full,
         short = short
     )

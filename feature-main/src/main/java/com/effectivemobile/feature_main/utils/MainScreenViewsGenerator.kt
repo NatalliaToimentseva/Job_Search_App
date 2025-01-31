@@ -1,30 +1,35 @@
 package com.effectivemobile.feature_main.utils
 
-import com.effectivemobile.domain.models.JobModel
-import com.effectivemobile.feature_main.models.MainScreenViews
+import com.effectivemobile.domain.models.OfferModel
+import com.effectivemobile.domain.models.VacancyModel
+import com.effectivemobile.core.models.GeneralScreenViews
 
-fun convertToMainScreenViews(isAllVacancies: Boolean, data: JobModel): List<MainScreenViews> {
-    val sections = mutableListOf<MainScreenViews>()
+fun convertToMainScreenViews(
+    isAllVacancies: Boolean,
+    offers: List<OfferModel>,
+    vacancies: List<VacancyModel>
+): List<GeneralScreenViews> {
+    val sections = mutableListOf<GeneralScreenViews>()
 
     if (isAllVacancies) {
-        sections.add(MainScreenViews.AllVacanciesTopSection(data.vacancies.size))
-        for (vacancy in data.vacancies) {
-            sections.add(MainScreenViews.VacancySection(vacancy))
+        sections.add(GeneralScreenViews.AllVacanciesTopSection(vacancies.size))
+        for (vacancy in vacancies) {
+            sections.add(GeneralScreenViews.VacancySection(vacancy))
         }
     } else {
-        sections.add(MainScreenViews.SearchSection)
+        sections.add(GeneralScreenViews.SearchSection)
 
-        if (data.offers.isNotEmpty()) {
-            sections.add(MainScreenViews.OffersSection(data.offers))
+        if (offers.isNotEmpty()) {
+            sections.add(GeneralScreenViews.OffersSection(offers))
         }
 
-        sections.add(MainScreenViews.TitleSection)
+        sections.add(GeneralScreenViews.TitleSection)
 
-        for (vacancy in data.vacancies.take(3)) {
-            sections.add(MainScreenViews.VacancySection(vacancy))
+        for (vacancy in vacancies.take(3)) {
+            sections.add(GeneralScreenViews.VacancySection(vacancy))
         }
 
-        sections.add(MainScreenViews.ButtonSection(data.vacancies.size))
+        sections.add(GeneralScreenViews.ButtonSection(vacancies.size))
     }
 
     return sections

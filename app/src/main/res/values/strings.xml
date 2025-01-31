@@ -1,0 +1,7 @@
+<resources>
+    <string name="responses_fragment_title">Responses fragment</string>
+    <string name="chat_fragment_title">Chat fragment</string>
+    <string name="profile_fragment_title">Profile fragment</string>
+    <string name="details_fragment_title">Details fragment id: %1$s</string>
+
+</resources>

@@ -5,16 +5,16 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.effectivemobile.feature_main.databinding.OffersSectionBinding
-import com.effectivemobile.feature_main.models.MainScreenViews
-import com.effectivemobile.feature_main.rececleView.offers.OffersAdapter
+import com.effectivemobile.core.models.GeneralScreenViews
+import com.effectivemobile.feature_main.rececleView.OffersAdapter
 import com.hannesdorfmann.adapterdelegates4.AdapterDelegate
 
 class OffersAdapterDelegate(
     private val onClick: (link: String) -> Unit
-) : AdapterDelegate<List<MainScreenViews>>() {
+) : AdapterDelegate<List<GeneralScreenViews>>() {
 
-    override fun isForViewType(items: List<MainScreenViews>, position: Int): Boolean {
-        return items[position] is MainScreenViews.OffersSection
+    override fun isForViewType(items: List<GeneralScreenViews>, position: Int): Boolean {
+        return items[position] is GeneralScreenViews.OffersSection
     }
 
     override fun onCreateViewHolder(parent: ViewGroup): RecyclerView.ViewHolder {
@@ -28,12 +28,12 @@ class OffersAdapterDelegate(
     }
 
     override fun onBindViewHolder(
-        items: List<MainScreenViews>,
+        items: List<GeneralScreenViews>,
         position: Int,
         holder: RecyclerView.ViewHolder,
         payloads: MutableList<Any>
     ) {
-        (holder as ViewHolder).bind(items[position] as MainScreenViews.OffersSection)
+        (holder as ViewHolder).bind(items[position] as GeneralScreenViews.OffersSection)
     }
 
     private inner class ViewHolder(private val binding: OffersSectionBinding) :
@@ -41,7 +41,7 @@ class OffersAdapterDelegate(
 
         private val nestedAdapter = OffersAdapter(onClick)
 
-        fun bind(item: MainScreenViews.OffersSection) {
+        fun bind(item: GeneralScreenViews.OffersSection) {
             binding.run {
                 offersRecycleView.layoutManager =
                     LinearLayoutManager(binding.root.context, LinearLayoutManager.HORIZONTAL, false)

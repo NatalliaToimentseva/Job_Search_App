@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tool="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/additional_filter_text"
+        style="@style/FavoriteTitleTextStyle"
+        android:text="@string/favorite_title_text"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/vacancies_number_icon"
+        style="@style/GeneralTextStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="@dimen/dm_10"
+        android:textColor="@color/text_gray"
+        app:layout_constraintStart_toStartOf="@+id/additional_filter_text"
+        app:layout_constraintTop_toBottomOf="@+id/additional_filter_text"
+        tool:text="145 вакансий" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

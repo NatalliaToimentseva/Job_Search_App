@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="button_vacancies_title">Еще %1$s</string>
-    <string name="vacancy_published_date">Опубликовано %1$s</string>
-    <string name="looking_number_text">Сейчас просматривает %1$s</string>
     <string name="additional_filter_text">По соответствию</string>
 </resources>

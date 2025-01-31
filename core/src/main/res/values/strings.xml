@@ -9,4 +9,7 @@
     <string name="filter_button">filter</string>
     <string name="vacancy_block_title">Вакансии для вас</string>
     <string name="button_vacancy_title">Откликнуться</string>
+    <string name="vacancy_published_date">Опубликовано %1$s</string>
+    <string name="looking_number_text">Сейчас просматривает %1$s</string>
+
 </resources>

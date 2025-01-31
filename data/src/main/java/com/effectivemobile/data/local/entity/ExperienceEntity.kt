@@ -7,6 +7,7 @@ import androidx.room.PrimaryKey
 @Entity(tableName = "Experience")
 data class ExperienceEntity(
     @PrimaryKey(autoGenerate = true)
+    @ColumnInfo("experience_id")
     val id: Long = 0,
     @ColumnInfo("preview_text")
     val previewText: String,

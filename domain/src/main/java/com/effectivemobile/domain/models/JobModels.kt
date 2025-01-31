@@ -34,17 +34,20 @@ data class VacancyModel(
 )
 
 data class AddressModel(
+    val id: Long?,
     val town: String,
     val street: String,
     val house: String,
 )
 
 data class ExperienceModel(
+    val id: Long?,
     val previewText: String,
     val text: String,
 )
 
 data class SalaryModel(
+    val id: Long?,
     val full: String,
     val short: String?,
 )

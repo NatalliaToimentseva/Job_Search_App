@@ -35,6 +35,7 @@ fun List<VacancyEntity>.toListVacancy(): List<VacancyModel> {
 
 fun AddressEntity.toAddress(): AddressModel {
     return AddressModel(
+        id = id,
         town = town,
         street = street,
         house = house
@@ -43,6 +44,7 @@ fun AddressEntity.toAddress(): AddressModel {
 
 fun ExperienceEntity.toExperience(): ExperienceModel {
     return ExperienceModel(
+        id = id,
         previewText = previewText,
         text = text
     )
@@ -50,6 +52,7 @@ fun ExperienceEntity.toExperience(): ExperienceModel {
 
 fun SalaryEntity.toSalary(): SalaryModel {
     return SalaryModel(
+        id = id,
         full = full,
         short = short
     )
@@ -80,6 +83,7 @@ fun List<VacancyModel>.toListVacancyEntity(): List<VacancyEntity> {
 
 fun AddressModel.toAddressEntity(): AddressEntity {
     return AddressEntity(
+        id = id ?: 0,
         town = town,
         street = street,
         house = house
@@ -88,6 +92,7 @@ fun AddressModel.toAddressEntity(): AddressEntity {
 
 fun ExperienceModel.toExperienceEntity(): ExperienceEntity {
     return ExperienceEntity(
+        id = id ?: 0,
         previewText = previewText,
         text = text
     )
@@ -95,6 +100,7 @@ fun ExperienceModel.toExperienceEntity(): ExperienceEntity {
 
 fun SalaryModel.toSalaryEntity(): SalaryEntity {
     return SalaryEntity(
+        id = id ?: 0,
         full = full,
         short = short
     )

@@ -30,6 +30,9 @@ android {
     kotlinOptions {
         jvmTarget = "11"
     }
+    buildFeatures {
+        viewBinding = true
+    }
 }
 
 dependencies {
@@ -39,4 +42,9 @@ dependencies {
     implementation (libs.material)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
+
+    implementation (libs.adapterdelegates4.kotlin.dsl)
+    implementation (libs.adapterdelegates4.kotlin.dsl.viewbinding)
+
+    implementation(project(":domain"))
 }

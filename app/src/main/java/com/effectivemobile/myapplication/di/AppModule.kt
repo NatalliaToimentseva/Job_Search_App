@@ -7,6 +7,7 @@ import com.effectivemobile.domain.repositories.DataBaseRepository
 import com.effectivemobile.domain.useCases.GetVacanciesFromDbUseCase
 import com.effectivemobile.domain.useCases.LoadJobDataUseCase
 import com.effectivemobile.domain.useCases.SetFavoriteUseCase
+import com.effectivemobile.feature_favorites.FavoritesViewModel
 import com.effectivemobile.feature_main.MainViewModel
 import org.koin.core.module.dsl.viewModelOf
 import org.koin.dsl.module
@@ -20,16 +21,16 @@ val appModule = module {
     factory<LoadJobDataUseCase> {
         LoadJobDataUseCase(
             repository = get(),
-            dbRepository = get(),
-            dataController = get()
+            dbRepository = get()
         )
     }
     factory<GetVacanciesFromDbUseCase> {
         GetVacanciesFromDbUseCase(dbRepository = get())
     }
-   factory<SetFavoriteUseCase> {
-       SetFavoriteUseCase(dbRepository = get())
+    factory<SetFavoriteUseCase> {
+        SetFavoriteUseCase(dbRepository = get())
     }
 
     viewModelOf(::MainViewModel)
+    viewModelOf(::FavoritesViewModel)
 }

@@ -6,11 +6,12 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.effectivemobile.core.openLink
-import com.effectivemobile.core.toast
+import com.effectivemobile.core.navigator.navigate
+import com.effectivemobile.core.utils.openLink
+import com.effectivemobile.core.utils.toast
 import com.effectivemobile.feature_main.databinding.FragmentMainBinding
-import com.effectivemobile.feature_main.generalAdapter.MainAdapter
-import com.effectivemobile.feature_main.models.MainScreenViews
+import com.effectivemobile.feature_main.mainAdapter.MainAdapter
+import com.effectivemobile.core.models.GeneralScreenViews
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class MainFragment : Fragment() {
@@ -40,11 +41,13 @@ class MainFragment : Fragment() {
             }
         }
         viewModel.mainScreenElements.observe(viewLifecycleOwner) { screenElements ->
-            initAdapter(screenElements)
+            if (screenElements.isNotEmpty()) {
+                initAdapter(screenElements)
+            }
         }
     }
 
-    private fun initAdapter(items: List<MainScreenViews>) {
+    private fun initAdapter(items: List<GeneralScreenViews>) {
         binding?.run {
             generalRecycleView.layoutManager = LinearLayoutManager(requireContext())
             mainAdapter = MainAdapter(
@@ -52,10 +55,10 @@ class MainFragment : Fragment() {
                     requireContext().openLink(link)
                 },
                 onClickVacancy = { id ->
-                    TODO()
+                    this@MainFragment.navigate().goToDetailsFromMain(id)
                 },
-                onFavoriteClickVacancy = { isFavorite ->
-                    TODO()
+                onFavoriteClickVacancy = { id, isFavorite ->
+                    viewModel.addToFavorite(id, isFavorite)
                 },
                 showAllVacancies = { isShow ->
                     viewModel.setIsShowAllVacancies(isShow)

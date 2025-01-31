@@ -16,6 +16,10 @@ android {
         buildConfigField("String", "BASE_URL", "\"https://drive.usercontent.google.com/\"")
     }
 
+    ksp {
+        arg("room.schemaLocation", "$projectDir/schemas")
+    }
+
     buildTypes {
         release {
             isMinifyEnabled = false
@@ -44,6 +48,7 @@ dependencies {
 
     implementation(libs.room.runtime)
     ksp(libs.room.compiler)
+    implementation(libs.androidx.room.ktx)
 
     implementation(libs.retrofit)
     implementation(libs.converter.gson)

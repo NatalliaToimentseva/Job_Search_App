@@ -4,13 +4,13 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.effectivemobile.feature_main.databinding.TitleSectionBinding
-import com.effectivemobile.feature_main.models.MainScreenViews
+import com.effectivemobile.core.models.GeneralScreenViews
 import com.hannesdorfmann.adapterdelegates4.AdapterDelegate
 
-class TitleAdapterDelegate : AdapterDelegate<List<MainScreenViews>>() {
+class TitleAdapterDelegate : AdapterDelegate<List<GeneralScreenViews>>() {
 
-    override fun isForViewType(items: List<MainScreenViews>, position: Int): Boolean {
-        return items[position] is MainScreenViews.TitleSection
+    override fun isForViewType(items: List<GeneralScreenViews>, position: Int): Boolean {
+        return items[position] is GeneralScreenViews.TitleSection
     }
 
     override fun onCreateViewHolder(parent: ViewGroup): RecyclerView.ViewHolder {
@@ -24,7 +24,7 @@ class TitleAdapterDelegate : AdapterDelegate<List<MainScreenViews>>() {
     }
 
     override fun onBindViewHolder(
-        items: List<MainScreenViews>,
+        items: List<GeneralScreenViews>,
         position: Int,
         holder: RecyclerView.ViewHolder,
         payloads: MutableList<Any>

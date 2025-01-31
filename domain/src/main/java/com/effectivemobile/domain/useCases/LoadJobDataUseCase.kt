@@ -1,6 +1,5 @@
 package com.effectivemobile.domain.useCases
 
-import com.effectivemobile.domain.controller.DataController
 import com.effectivemobile.domain.repositories.ApiRepository
 import com.effectivemobile.domain.repositories.DataBaseRepository
 import com.effectivemobile.domain.results.DataResult
@@ -10,8 +9,7 @@ import kotlinx.coroutines.flow.flow
 
 class LoadJobDataUseCase(
     private val repository: ApiRepository,
-    private val dbRepository: DataBaseRepository,
-    private val dataController: DataController
+    private val dbRepository: DataBaseRepository
 ) {
 
     fun loadJob(): Flow<JobResult> {
@@ -20,8 +18,7 @@ class LoadJobDataUseCase(
             when (val result = repository.getJobData()) {
                 is DataResult.Error -> emit(JobResult.Error(result.message))
                 is DataResult.Success -> {
-                    emit(JobResult.Success)
-                    dataController.jobData.tryEmit(result.jobData)
+                    emit(JobResult.Success(result.jobData.offers))
                     dbRepository.saveVacancies(result.jobData.vacancies)
                 }
             }

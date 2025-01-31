@@ -5,16 +5,16 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.effectivemobile.feature_main.R
 import com.effectivemobile.feature_main.databinding.ButtonSectionBinding
-import com.effectivemobile.feature_main.models.MainScreenViews
-import com.effectivemobile.feature_main.utils.matchVacancies
+import com.effectivemobile.core.models.GeneralScreenViews
+import com.effectivemobile.core.utils.matchVacancies
 import com.hannesdorfmann.adapterdelegates4.AdapterDelegate
 
 class ButtonAdapterDelegate(
     private val showAllVacancies: (isShow: Boolean) -> Unit
-) : AdapterDelegate<List<MainScreenViews>>() {
+) : AdapterDelegate<List<GeneralScreenViews>>() {
 
-    override fun isForViewType(items: List<MainScreenViews>, position: Int): Boolean {
-        return items[position] is MainScreenViews.ButtonSection
+    override fun isForViewType(items: List<GeneralScreenViews>, position: Int): Boolean {
+        return items[position] is GeneralScreenViews.ButtonSection
     }
 
     override fun onCreateViewHolder(parent: ViewGroup): RecyclerView.ViewHolder {
@@ -28,13 +28,13 @@ class ButtonAdapterDelegate(
     }
 
     override fun onBindViewHolder(
-        items: List<MainScreenViews>,
+        items: List<GeneralScreenViews>,
         position: Int,
         holder: RecyclerView.ViewHolder,
         payloads: MutableList<Any>
     ) {
         (holder as ViewHolder).bind(
-            items[position] as MainScreenViews.ButtonSection,
+            items[position] as GeneralScreenViews.ButtonSection,
             showAllVacancies
         )
     }
@@ -43,7 +43,7 @@ class ButtonAdapterDelegate(
         RecyclerView.ViewHolder(binding.root) {
 
         fun bind(
-            item: MainScreenViews.ButtonSection,
+            item: GeneralScreenViews.ButtonSection,
             showAllVacancies: (isShow: Boolean) -> Unit
         ) {
             binding.mainButton.text =

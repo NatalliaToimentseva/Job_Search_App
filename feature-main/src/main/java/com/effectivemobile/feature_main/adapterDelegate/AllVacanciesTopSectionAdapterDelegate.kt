@@ -4,16 +4,16 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.effectivemobile.feature_main.databinding.AllVacanciesTopSectionBinding
-import com.effectivemobile.feature_main.models.MainScreenViews
-import com.effectivemobile.feature_main.utils.matchVacancies
+import com.effectivemobile.core.models.GeneralScreenViews
+import com.effectivemobile.core.utils.matchVacancies
 import com.hannesdorfmann.adapterdelegates4.AdapterDelegate
 
 class AllVacanciesTopSectionAdapterDelegate(
     private val showAllVacancies: (isShow: Boolean) -> Unit
-) : AdapterDelegate<List<MainScreenViews>>() {
+) : AdapterDelegate<List<GeneralScreenViews>>() {
 
-    override fun isForViewType(items: List<MainScreenViews>, position: Int): Boolean {
-        return items[position] is MainScreenViews.AllVacanciesTopSection
+    override fun isForViewType(items: List<GeneralScreenViews>, position: Int): Boolean {
+        return items[position] is GeneralScreenViews.AllVacanciesTopSection
     }
 
     override fun onCreateViewHolder(parent: ViewGroup): RecyclerView.ViewHolder {
@@ -27,13 +27,13 @@ class AllVacanciesTopSectionAdapterDelegate(
     }
 
     override fun onBindViewHolder(
-        items: List<MainScreenViews>,
+        items: List<GeneralScreenViews>,
         position: Int,
         holder: RecyclerView.ViewHolder,
         payloads: MutableList<Any>
     ) {
         (holder as ViewHolder).bind(
-            items[position] as MainScreenViews.AllVacanciesTopSection,
+            items[position] as GeneralScreenViews.AllVacanciesTopSection,
             showAllVacancies
         )
     }
@@ -42,7 +42,7 @@ class AllVacanciesTopSectionAdapterDelegate(
         RecyclerView.ViewHolder(binding.root) {
 
         fun bind(
-            item: MainScreenViews.AllVacanciesTopSection,
+            item: GeneralScreenViews.AllVacanciesTopSection,
             showAllVacancies: (isShow: Boolean) -> Unit
         ) {
             binding.vacanciesNumberIcon.text = matchVacancies(item.vacancyNumber)
