@@ -1,9 +1,5 @@
 package com.effectivemobile.data.remote.mapper
 
-import com.effectivemobile.data.local.entity.AddressEntity
-import com.effectivemobile.data.local.entity.ExperienceEntity
-import com.effectivemobile.data.local.entity.SalaryEntity
-import com.effectivemobile.data.local.entity.VacancyEntity
 import com.effectivemobile.data.remote.response.AddressResponse
 import com.effectivemobile.data.remote.response.ButtonResponse
 import com.effectivemobile.data.remote.response.ExperienceResponse
@@ -88,54 +84,6 @@ fun ExperienceResponse.toExperience(): ExperienceModel {
 fun SalaryResponse.toSalary(): SalaryModel {
     return SalaryModel(
         id = null,
-        full = full,
-        short = short
-    )
-}
-
-fun VacancyResponse.toVacancyEntity(): VacancyEntity {
-    return VacancyEntity(
-        id = id,
-        lookingNumber = lookingNumber,
-        title = title,
-        address = address.toAddressEntity(),
-        company = company,
-        experience = experience.toExperienceEntity(),
-        publishedDate = publishedDate,
-        isFavorite = isFavorite,
-        salary = salary.toSalaryEntity(),
-        schedules = schedules,
-        appliedNumber = appliedNumber,
-        description = description,
-        responsibilities = responsibilities,
-        questions = questions
-    )
-}
-
-fun List<VacancyResponse>.toListVacancyEntity(): List<VacancyEntity> {
-    return this.map { it.toVacancyEntity() }
-}
-
-fun AddressResponse.toAddressEntity(): AddressEntity {
-    return AddressEntity(
-        id = 0,
-        town = town,
-        street = street,
-        house = house
-    )
-}
-
-fun ExperienceResponse.toExperienceEntity(): ExperienceEntity {
-    return ExperienceEntity(
-        id = 0,
-        previewText = previewText,
-        text = text
-    )
-}
-
-fun SalaryResponse.toSalaryEntity(): SalaryEntity {
-    return SalaryEntity(
-        id = 0,
         full = full,
         short = short
     )

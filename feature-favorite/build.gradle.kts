@@ -1,21 +1,17 @@
 plugins {
-    alias(libs.plugins.android.application)
+    alias(libs.plugins.android.library)
     alias(libs.plugins.kotlin.android)
-    id("androidx.navigation.safeargs")
 }
 
 android {
-    namespace = "com.effectivemobile.myapplication"
+    namespace = "com.effectivemobile.feature_favorite"
     compileSdk = 35
 
     defaultConfig {
-        applicationId = "com.effectivemobile.myapplication"
         minSdk = 28
-        targetSdk = 34
-        versionCode = 1
-        versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles("consumer-rules.pro")
     }
 
     buildTypes {
@@ -43,9 +39,7 @@ dependencies {
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
-    implementation (libs.material)
-    implementation(libs.androidx.activity)
-    implementation(libs.androidx.constraintlayout)
+    implementation(libs.material)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
@@ -53,12 +47,9 @@ dependencies {
     implementation(libs.koin.core)
     implementation(libs.koin.android)
 
-    implementation(libs.androidx.navigation.fragment.ktx)
-    implementation(libs.androidx.navigation.ui.ktx)
+    implementation (libs.adapterdelegates4.kotlin.dsl)
+    implementation (libs.adapterdelegates4.kotlin.dsl.viewbinding)
 
     implementation(project(":domain"))
-    implementation(project(":data"))
-    implementation(project(":feature-main"))
     implementation(project(":core"))
-    implementation(project(":feature-favorite"))
 }

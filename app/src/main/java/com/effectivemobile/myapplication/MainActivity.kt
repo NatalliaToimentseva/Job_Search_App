@@ -6,6 +6,7 @@ import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
 import com.effectivemobile.core.navigator.Navigation
+import com.effectivemobile.feature_favorite.FavoriteFragmentDirections
 import com.effectivemobile.feature_main.MainFragmentDirections
 import com.effectivemobile.myapplication.databinding.ActivityMainBinding
 
@@ -28,10 +29,14 @@ class MainActivity : AppCompatActivity(), Navigation {
 
     override fun goToDetailsFromMain(id: String) {
         navController?.navigate(MainFragmentDirections.actionMainFragmentToVacancyDetailsFragment(id))
+
     }
 
     override fun goToDetailsFromFavorites(id: String) {
-        navController?.navigate(R.id.action_favoritesFragment_to_vacancyDetailsFragment)
-
+        navController?.navigate(
+            FavoriteFragmentDirections.actionFavoriteFragmentToVacancyDetailsFragment(
+                id
+            )
+        )
     }
 }
