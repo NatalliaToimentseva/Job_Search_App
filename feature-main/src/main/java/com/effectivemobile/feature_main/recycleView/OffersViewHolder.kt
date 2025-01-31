@@ -1,4 +1,4 @@
-package com.effectivemobile.feature_main.rececleView
+package com.effectivemobile.feature_main.recycleView
 
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView

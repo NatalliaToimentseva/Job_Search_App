@@ -6,13 +6,8 @@
 
     <androidx.appcompat.widget.SearchView
         android:id="@+id/search_bar"
-        android:layout_width="@dimen/dm_0"
-        android:layout_height="@dimen/dm_40"
-        android:layout_marginVertical="@dimen/dm_10"
-        android:layout_marginEnd="@dimen/dm_10"
-        android:background="@drawable/lite_rounded_background"
-        android:padding="@dimen/dm_10"
-        android:theme="@style/SearchView"
+        style="@style/MainSearchViewStyle"
+        app:iconifiedByDefault="false"
         app:layout_constraintEnd_toStartOf="@+id/filter_button"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -24,8 +19,8 @@
         style="@style/FilterButtonStyle"
         android:contentDescription="@string/filter_button"
         android:src="@drawable/ic_filter"
+        app:layout_constraintBottom_toBottomOf="@+id/search_bar"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/search_bar"
-        app:layout_constraintBottom_toBottomOf="@+id/search_bar"/>
+        app:layout_constraintTop_toTopOf="@+id/search_bar" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

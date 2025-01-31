@@ -1,7 +1,7 @@
 package com.effectivemobile.myapplication.di
 
-import com.effectivemobile.data.local.repository.DataBaseRepositoryImpl
-import com.effectivemobile.data.remote.repository.ApiRepositoryImpl
+import com.effectivemobile.data.local.repositoryImpl.DataBaseRepositoryImpl
+import com.effectivemobile.data.remote.repositoryImpl.ApiRepositoryImpl
 import com.effectivemobile.domain.repositories.ApiRepository
 import com.effectivemobile.domain.repositories.DataBaseRepository
 import com.effectivemobile.domain.useCases.GetVacanciesFromDbUseCase

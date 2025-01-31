@@ -6,7 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.effectivemobile.core.models.GeneralScreenViews
+import com.effectivemobile.core.commonModels.GeneralScreenViews
 import com.effectivemobile.core.navigator.navigate
 import com.effectivemobile.core.utils.toast
 import com.effectivemobile.core.utils.updater

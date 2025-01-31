@@ -2,4 +2,5 @@
 <resources>
     <string name="button_vacancies_title">Еще %1$s</string>
     <string name="additional_filter_text">По соответствию</string>
+
 </resources>

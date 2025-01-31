@@ -2,7 +2,7 @@ package com.effectivemobile.feature_favorite.mainAdapter
 
 import androidx.recyclerview.widget.DiffUtil
 import com.effectivemobile.core.commonAdapterDelegate.VacancyAdapterDelegate
-import com.effectivemobile.core.models.GeneralScreenViews
+import com.effectivemobile.core.commonModels.GeneralScreenViews
 import com.effectivemobile.feature_favorite.adapterDelegate.FavoriteTopSectionAdapterDelegate
 import com.hannesdorfmann.adapterdelegates4.AsyncListDifferDelegationAdapter
 

@@ -58,7 +58,7 @@ dependencies {
 
     implementation(project(":domain"))
     implementation(project(":data"))
-    implementation(project(":feature-main"))
     implementation(project(":core"))
+    implementation(project(":feature-main"))
     implementation(project(":feature-favorite"))
 }

@@ -1,4 +1,4 @@
-package com.effectivemobile.core.models
+package com.effectivemobile.core.commonModels
 
 import com.effectivemobile.domain.models.OfferModel
 import com.effectivemobile.domain.models.VacancyModel
@@ -12,6 +12,7 @@ sealed class GeneralScreenViews : DiffEquals<GeneralScreenViews> {
         override fun isSameContent(other: GeneralScreenViews): Boolean = true
     }
 
+
     data class FavoriteTopSection(val vacancyNumber: Int) : GeneralScreenViews() {
 
         override fun isSameItem(other: GeneralScreenViews): Boolean = other is FavoriteTopSection
@@ -19,12 +20,14 @@ sealed class GeneralScreenViews : DiffEquals<GeneralScreenViews> {
         override fun isSameContent(other: GeneralScreenViews): Boolean = true
     }
 
+
     data object SearchSection : GeneralScreenViews() {
 
         override fun isSameItem(other: GeneralScreenViews): Boolean = other is SearchSection
 
         override fun isSameContent(other: GeneralScreenViews): Boolean = true
     }
+
 
     data class OffersSection(val offerList: List<OfferModel>) : GeneralScreenViews() {
 
@@ -34,12 +37,14 @@ sealed class GeneralScreenViews : DiffEquals<GeneralScreenViews> {
             other is OffersSection && offerList == other.offerList
     }
 
+
     data object TitleSection : GeneralScreenViews() {
 
         override fun isSameItem(other: GeneralScreenViews): Boolean = other is TitleSection
 
         override fun isSameContent(other: GeneralScreenViews): Boolean = true
     }
+
 
     data class VacancySection(val vacancy: VacancyModel) : GeneralScreenViews() {
 
@@ -48,6 +53,7 @@ sealed class GeneralScreenViews : DiffEquals<GeneralScreenViews> {
         override fun isSameContent(other: GeneralScreenViews): Boolean =
             other is VacancySection && vacancy == other.vacancy
     }
+
 
     data class ButtonSection(val vacancyNumber: Int) : GeneralScreenViews() {
 

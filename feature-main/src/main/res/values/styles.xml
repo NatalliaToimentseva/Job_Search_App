@@ -70,4 +70,25 @@
         <item name="android:visibility">visible</item>
     </style>
 
+    <style name="MainSearchViewStyle">
+        <item name="android:layout_width">@dimen/dm_0</item>
+        <item name="android:layout_height">@dimen/dm_40</item>
+        <item name="android:layout_marginVertical">@dimen/dm_10</item>
+        <item name="android:layout_marginEnd">@dimen/dm_10</item>
+        <item name="android:background">@drawable/lite_rounded_background</item>
+        <item name="android:inputType">none</item>
+        <item name="android:theme">@style/SearchView</item>
+    </style>
+
+    <style name="BackSearchView">
+        <item name="android:layout_width">@dimen/dm_0</item>
+        <item name="android:layout_height">@dimen/dm_40</item>
+        <item name="android:layout_marginVertical">@dimen/dm_10</item>
+        <item name="android:layout_marginEnd">@dimen/dm_10</item>
+        <item name="android:background">@drawable/lite_rounded_background</item>
+        <item name="android:inputType">none</item>
+        <item name="android:padding">@dimen/dm_10</item>
+        <item name="android:theme">@style/SearchView</item>
+    </style>
+
 </resources>

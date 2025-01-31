@@ -4,7 +4,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.effectivemobile.feature_main.databinding.AllVacanciesTopSectionBinding
-import com.effectivemobile.core.models.GeneralScreenViews
+import com.effectivemobile.core.commonModels.GeneralScreenViews
 import com.effectivemobile.core.utils.matchVacancies
 import com.hannesdorfmann.adapterdelegates4.AdapterDelegate
 
@@ -46,7 +46,9 @@ class AllVacanciesTopSectionAdapterDelegate(
             showAllVacancies: (isShow: Boolean) -> Unit
         ) {
             binding.vacanciesNumberIcon.text = matchVacancies(item.vacancyNumber)
+
             binding.searchBar.setOnSearchClickListener {
+                it.clearFocus()
                 showAllVacancies.invoke(false)
             }
         }

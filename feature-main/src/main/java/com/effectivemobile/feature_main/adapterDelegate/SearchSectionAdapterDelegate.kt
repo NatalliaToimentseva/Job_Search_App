@@ -4,7 +4,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.effectivemobile.feature_main.databinding.SearchSectionBinding
-import com.effectivemobile.core.models.GeneralScreenViews
+import com.effectivemobile.core.commonModels.GeneralScreenViews
 import com.hannesdorfmann.adapterdelegates4.AdapterDelegate
 
 class SearchSectionAdapterDelegate : AdapterDelegate<List<GeneralScreenViews>>() {

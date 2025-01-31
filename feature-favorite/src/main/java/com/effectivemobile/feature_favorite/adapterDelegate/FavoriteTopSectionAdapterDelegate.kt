@@ -3,7 +3,7 @@ package com.effectivemobile.feature_favorite.adapterDelegate
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.effectivemobile.core.models.GeneralScreenViews
+import com.effectivemobile.core.commonModels.GeneralScreenViews
 import com.effectivemobile.core.utils.matchVacancies
 import com.effectivemobile.feature_favorite.databinding.FavoriteTopBarItemBinding
 import com.hannesdorfmann.adapterdelegates4.AdapterDelegate

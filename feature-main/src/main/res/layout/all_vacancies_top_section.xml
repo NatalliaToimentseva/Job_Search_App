@@ -7,13 +7,7 @@
 
     <androidx.appcompat.widget.SearchView
         android:id="@+id/search_bar"
-        android:layout_width="@dimen/dm_0"
-        android:layout_height="@dimen/dm_40"
-        android:layout_marginVertical="@dimen/dm_10"
-        android:layout_marginEnd="@dimen/dm_10"
-        android:background="@drawable/lite_rounded_background"
-        android:padding="@dimen/dm_10"
-        android:theme="@style/SearchView"
+        style="@style/BackSearchView"
         app:layout_constraintEnd_toStartOf="@+id/filter_button"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"

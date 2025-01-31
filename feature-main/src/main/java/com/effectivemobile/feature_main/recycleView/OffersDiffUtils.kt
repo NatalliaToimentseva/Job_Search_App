@@ -1,4 +1,4 @@
-package com.effectivemobile.feature_main.rececleView
+package com.effectivemobile.feature_main.recycleView
 
 import androidx.recyclerview.widget.DiffUtil
 import com.effectivemobile.domain.models.OfferModel

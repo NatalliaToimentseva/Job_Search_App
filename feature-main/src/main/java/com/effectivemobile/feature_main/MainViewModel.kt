@@ -5,7 +5,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.effectivemobile.core.models.GeneralScreenViews
+import com.effectivemobile.core.commonModels.GeneralScreenViews
 import com.effectivemobile.domain.models.OfferModel
 import com.effectivemobile.domain.models.VacancyModel
 import com.effectivemobile.domain.results.JobResult
@@ -26,14 +26,14 @@ class MainViewModel(
     val isInProgress = MutableLiveData(false)
     var error: ((message: String) -> Unit)? = null
 
-    private val _mainScreenElements = MutableLiveData<List<GeneralScreenViews>>(arrayListOf())
-    val mainScreenElements: LiveData<List<GeneralScreenViews>> get() = _mainScreenElements
-
     private val isShowAllVacancies = MutableLiveData(false)
-
     private val _offers = MutableLiveData<List<OfferModel>>()
+
     private val _vacanciesList = MutableLiveData<List<VacancyModel>>()
     val vacanciesList: LiveData<List<VacancyModel>> get() = _vacanciesList
+
+    private val _mainScreenElements = MutableLiveData<List<GeneralScreenViews>>(arrayListOf())
+    val mainScreenElements: LiveData<List<GeneralScreenViews>> get() = _mainScreenElements
 
     init {
         viewModelScope.launch(Dispatchers.IO) {
@@ -60,8 +60,19 @@ class MainViewModel(
         }
     }
 
+    fun addToFavorite(id: String, isFavorite: Boolean) {
+        viewModelScope.launch(Dispatchers.IO) {
+            _vacanciesList.value?.firstOrNull { it.id == id }?.also { vacancy ->
+                setFavoriteUseCase.setIsFavorite(vacancy.copy(isFavorite = !isFavorite))
+                    .collect { result ->
+                        handleResult(result)
+                    }
+            }
+        }
+    }
+
     fun setIsShowAllVacancies(isShow: Boolean) {
-        isShowAllVacancies.postValue(isShow)
+        isShowAllVacancies.value = isShow
         _offers.value?.let { offers ->
             _vacanciesList.value?.let { vacancies ->
                 createMainScreenViews(offers, vacancies)
@@ -72,17 +83,6 @@ class MainViewModel(
     private fun createMainScreenViews(offers: List<OfferModel>, vacancies: List<VacancyModel>) {
         isShowAllVacancies.value?.let {
             _mainScreenElements.postValue(convertToMainScreenViews(it, offers, vacancies))
-        }
-    }
-
-    fun addToFavorite(id: String, isFavorite: Boolean) {
-        viewModelScope.launch(Dispatchers.IO) {
-            _vacanciesList.value?.firstOrNull { it.id == id }?.also { vacancy ->
-                setFavoriteUseCase.setIsFavorite(vacancy.copy(isFavorite = !isFavorite))
-                    .collect { result ->
-                        handleResult(result)
-                    }
-            }
         }
     }
 

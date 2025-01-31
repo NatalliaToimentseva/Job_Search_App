@@ -1,4 +1,4 @@
-package com.effectivemobile.data.utils
+package com.effectivemobile.data.dbUtils
 
 import androidx.room.TypeConverter
 

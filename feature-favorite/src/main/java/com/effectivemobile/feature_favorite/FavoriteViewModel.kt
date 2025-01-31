@@ -5,7 +5,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.effectivemobile.core.models.GeneralScreenViews
+import com.effectivemobile.core.commonModels.GeneralScreenViews
 import com.effectivemobile.domain.models.VacancyModel
 import com.effectivemobile.domain.results.VacancyResult
 import com.effectivemobile.domain.useCases.GetVacanciesFromDbUseCase
@@ -21,11 +21,11 @@ class FavoriteViewModel(
     val isInProgress = MutableLiveData(false)
     var error: ((message: String) -> Unit)? = null
 
-    private val _vacanciesList = MutableLiveData<List<VacancyModel>>()
-    val vacanciesList : LiveData<List<VacancyModel>> get() = _vacanciesList
-
     private val _screenViews = MutableLiveData<List<GeneralScreenViews>>(arrayListOf())
     val screenViews: LiveData<List<GeneralScreenViews>> get() = _screenViews
+
+    private val _vacanciesList = MutableLiveData<List<VacancyModel>>()
+    val vacanciesList : LiveData<List<VacancyModel>> get() = _vacanciesList
 
     init {
         viewModelScope.launch(Dispatchers.IO) {

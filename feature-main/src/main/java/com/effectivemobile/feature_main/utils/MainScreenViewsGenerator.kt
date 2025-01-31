@@ -2,7 +2,7 @@ package com.effectivemobile.feature_main.utils
 
 import com.effectivemobile.domain.models.OfferModel
 import com.effectivemobile.domain.models.VacancyModel
-import com.effectivemobile.core.models.GeneralScreenViews
+import com.effectivemobile.core.commonModels.GeneralScreenViews
 
 fun convertToMainScreenViews(
     isAllVacancies: Boolean,

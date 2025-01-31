@@ -5,7 +5,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.effectivemobile.core.commonViewHolder.VacancyViewHolder
 import com.effectivemobile.core.databinding.VacancyItemBinding
-import com.effectivemobile.core.models.GeneralScreenViews
+import com.effectivemobile.core.commonModels.GeneralScreenViews
 import com.hannesdorfmann.adapterdelegates4.AdapterDelegate
 
 class VacancyAdapterDelegate(

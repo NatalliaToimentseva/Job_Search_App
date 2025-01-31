@@ -1,7 +1,7 @@
 package com.effectivemobile.feature_main.mainAdapter
 
 import androidx.recyclerview.widget.DiffUtil
-import com.effectivemobile.core.models.GeneralScreenViews
+import com.effectivemobile.core.commonModels.GeneralScreenViews
 import com.effectivemobile.feature_main.adapterDelegate.AllVacanciesTopSectionAdapterDelegate
 import com.effectivemobile.feature_main.adapterDelegate.ButtonAdapterDelegate
 import com.effectivemobile.feature_main.adapterDelegate.OffersAdapterDelegate

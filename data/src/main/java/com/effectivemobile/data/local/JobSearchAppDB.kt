@@ -8,7 +8,7 @@ import com.effectivemobile.data.local.entity.AddressEntity
 import com.effectivemobile.data.local.entity.ExperienceEntity
 import com.effectivemobile.data.local.entity.SalaryEntity
 import com.effectivemobile.data.local.entity.VacancyEntity
-import com.effectivemobile.data.utils.DbListConverter
+import com.effectivemobile.data.dbUtils.DbListConverter
 
 @Database(
     version = 1,

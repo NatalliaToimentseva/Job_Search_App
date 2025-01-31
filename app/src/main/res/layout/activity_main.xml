@@ -21,9 +21,6 @@
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/navBar"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/dm_70"
-        android:background="@color/medium_gray"
         app:itemActiveIndicatorStyle="@android:color/transparent"
         app:itemIconTint="@color/bottom_menu_icons_colors"
         app:itemTextColor="@color/bottom_menu_icons_colors"
@@ -32,6 +29,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tab_container"
-        app:menu="@menu/bottom_navigation_menu" />
+        app:menu="@menu/bottom_navigation_menu"
+        style="@style/BottomBarStyle" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

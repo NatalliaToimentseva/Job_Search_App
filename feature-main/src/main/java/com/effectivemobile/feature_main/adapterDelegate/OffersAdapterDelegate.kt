@@ -5,8 +5,8 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.effectivemobile.feature_main.databinding.OffersSectionBinding
-import com.effectivemobile.core.models.GeneralScreenViews
-import com.effectivemobile.feature_main.rececleView.OffersAdapter
+import com.effectivemobile.core.commonModels.GeneralScreenViews
+import com.effectivemobile.feature_main.recycleView.OffersAdapter
 import com.hannesdorfmann.adapterdelegates4.AdapterDelegate
 
 class OffersAdapterDelegate(

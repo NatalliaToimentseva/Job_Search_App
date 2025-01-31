@@ -9,6 +9,5 @@ interface DataBaseRepository {
 
     fun getAllVacancies(): Flow<List<VacancyModel>>
 
-
     suspend fun updateVacancy(vacancy: VacancyModel)
 }

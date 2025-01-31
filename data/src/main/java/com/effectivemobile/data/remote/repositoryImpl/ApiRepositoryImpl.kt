@@ -1,4 +1,4 @@
-package com.effectivemobile.data.remote.repository
+package com.effectivemobile.data.remote.repositoryImpl
 
 import com.effectivemobile.data.remote.Api
 import com.effectivemobile.data.remote.mapper.toJob

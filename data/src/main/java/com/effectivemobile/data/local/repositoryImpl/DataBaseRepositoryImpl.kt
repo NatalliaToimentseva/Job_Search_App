@@ -1,4 +1,4 @@
-package com.effectivemobile.data.local.repository
+package com.effectivemobile.data.local.repositoryImpl
 
 import com.effectivemobile.data.local.dao.VacancyDao
 import com.effectivemobile.data.local.mapper.toListVacancy
