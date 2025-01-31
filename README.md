@@ -17,8 +17,9 @@
 
 * App - contains Main Activity, Application class, basic DI and screen mocks<br />
 * Core - сontains:<br />
-    - common utilities, resources, a common sealed class GeneralScreenViews for the AdapterDelegate;<br />
-    - VacancyAdapterDelegate and VacancyViewHolder screen models common to fragments;<br />
+    - common utilities, resources;<br />
+    - a common sealed class GeneralScreenViews - screen models for the AdapterDelegate;<br />
+    - VacancyAdapterDelegate and VacancyViewHolder;<br />
     - an interface Navigation for implementing navigation between lists and a detail screen.<br />
 * Domain - contains models for the presentation layer, Use cases and interfaces for repositories<br />
 * Data - contains the implementation of the database and API; implementations of interfaces<br />
